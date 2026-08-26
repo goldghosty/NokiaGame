@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6ce5vjna8n6r"]
 
-[ext_resource type="Script" uid="uid://d3uhqavx7mwvy" path="res://mirror.gd" id="1_nk6sm"]
+[ext_resource type="Script" uid="uid://d3uhqavx7mwvy" path="res://Scripts/mirror.gd" id="1_nk6sm"]
 [ext_resource type="Texture2D" uid="uid://14myx8qwjeum" path="res://Sprites/mirror.png" id="1_scjey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nk6sm"]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var projectile = preload("res://projectile.tscn")
+var projectile = preload("res://Scenes/projectile.tscn")
 const SPEED = 20.0
 const JUMP_VELOCITY = -175.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D

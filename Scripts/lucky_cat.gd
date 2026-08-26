@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @onready var marker_2d: Marker2D = $Marker2D
 
-var projectile_enemy = preload("res://lucky_cat_projectile.tscn")
+var projectile_enemy = preload("res://Scenes/lucky_cat_projectile.tscn")
 var speed: float = 5
 var distance: float = 7
 var direction : int = 1

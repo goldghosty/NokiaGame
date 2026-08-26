@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bffvcdpd5lxbf"]
 
-[ext_resource type="Script" uid="uid://n380uka5r1t1" path="res://lucky_cat.gd" id="1_e8jfg"]
+[ext_resource type="Script" uid="uid://n380uka5r1t1" path="res://Scripts/lucky_cat.gd" id="1_e8jfg"]
 [ext_resource type="Texture2D" uid="uid://bg4mqf133ui73" path="res://Sprites/luckycatdefault.png" id="1_n5pil"]
 [ext_resource type="Texture2D" uid="uid://dke8ixgg3586f" path="res://Sprites/luckycatattack.png" id="2_2ugl5"]
 

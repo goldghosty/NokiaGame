@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cl44w7wh1jiul"]
 
-[ext_resource type="Script" uid="uid://c4heodk4xhpe6" path="res://character_body_2d.gd" id="1_ij6vw"]
+[ext_resource type="Script" uid="uid://c4heodk4xhpe6" path="res://Scripts/black_cat.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://lo3hvvjbvyun" path="res://Sprites/smallcatwalk.png" id="2_ghijl"]
 [ext_resource type="Texture2D" uid="uid://d8oabn2ur5ca" path="res://Sprites/smallcatidle.png" id="3_ghijl"]
 
