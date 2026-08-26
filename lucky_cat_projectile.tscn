@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bryglejhxtqwn"]
+
+[ext_resource type="Script" uid="uid://dcyfmccwie2dl" path="res://lucky_cat_projectile.gd" id="1_im5yr"]
+[ext_resource type="Texture2D" uid="uid://dg5pwh0m62il8" path="res://Sprites/projectile.png" id="2_akivw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cg52u"]
+size = Vector2(6, 5)
+
+[node name="LuckyCatProjectile" type="Area2D" unique_id=2050443621]
+script = ExtResource("1_im5yr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=645120942]
+texture = ExtResource("2_akivw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1210853782]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_cg52u")
