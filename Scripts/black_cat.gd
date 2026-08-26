@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var projectile = preload("res://Scenes/projectile.tscn")
+var facing_direction = 1
 const SPEED = 20.0
 const JUMP_VELOCITY = -175.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -34,15 +35,17 @@ func _physics_process(delta: float) -> void:
 		
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
+		facing_direction = 1
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
+		facing_direction = -1
 
 	move_and_slide()
 
 
 func shoot() -> void:
 	var object = projectile.instantiate()
-	object.direction = 1
+	object.direction = facing_direction
 	object.position = global_position
 	get_tree().current_scene.add_child(object)
 	

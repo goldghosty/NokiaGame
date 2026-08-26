@@ -52,4 +52,4 @@ position = Vector2(31, 36)
 position = Vector2(9, 40)
 
 [node name="LuckyCat" parent="." unique_id=435307116 instance=ExtResource("7_ioaeq")]
-position = Vector2(60, 24)
+position = Vector2(39, 22)

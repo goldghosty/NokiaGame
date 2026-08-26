@@ -1,19 +1,21 @@
 [gd_scene format=3 uid="uid://btt5nkuqel7gy"]
 
-[ext_resource type="Texture2D" uid="uid://dg5pwh0m62il8" path="res://Sprites/projectile.png" id="1_a85iw"]
 [ext_resource type="Script" uid="uid://dlwl1qspkgvm4" path="res://Scripts/projectile.gd" id="1_qxf0c"]
+[ext_resource type="Texture2D" uid="uid://betnlce6kto" path="res://Sprites/hairball.png" id="2_yr2qt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxf0c"]
-size = Vector2(6, 5)
+size = Vector2(3, 3)
 
 [node name="Projectile" type="Area2D" unique_id=2083660521 groups=["Projectile"]]
 collision_layer = 8
-collision_mask = 4
+collision_mask = 20
 script = ExtResource("1_qxf0c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=50296621]
-texture = ExtResource("1_a85iw")
+texture = ExtResource("2_yr2qt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1196220742]
-position = Vector2(0, -0.5)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_qxf0c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
