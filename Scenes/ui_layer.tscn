@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://bp3ba2pi2mr6f"]
 
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="1_pxq32"]
+[ext_resource type="Script" uid="uid://bpsw3cuhadvtu" path="res://Scenes/ui_layer.gd" id="1_r7lrm"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=854107549]
+script = ExtResource("1_r7lrm")
 
 [node name="Label" type="Label" parent="." unique_id=486396363]
-offset_right = 80.0
-offset_bottom = 23.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 82.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
 theme_override_fonts/font = ExtResource("1_pxq32")
 theme_override_font_sizes/font_size = 8
-text = "SCORE:"
+text = "HAIRBALL: READY"

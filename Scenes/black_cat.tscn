@@ -126,3 +126,9 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwipeBox" unique_id=1099853226]
 position = Vector2(4.5, 1)
 shape = SubResource("RectangleShape2D_0e054")
+
+[node name="HairballTimer" type="Timer" parent="." unique_id=1266717535]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="HairballTimer" to="." method="_on_hairball_timer_timeout"]

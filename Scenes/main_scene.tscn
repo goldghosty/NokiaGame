@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dhwkqmaddgrf5" path="res://Sprites/platformlong.png" id="3_m1efj"]
 [ext_resource type="PackedScene" uid="uid://c32tg8n2lapbv" path="res://Scenes/platform.tscn" id="4_mai8y"]
 [ext_resource type="PackedScene" uid="uid://cl44w7wh1jiul" path="res://Scenes/black_cat.tscn" id="6_drdnd"]
+[ext_resource type="PackedScene" uid="uid://bp3ba2pi2mr6f" path="res://Scenes/ui_layer.tscn" id="7_maf8m"]
 [ext_resource type="PackedScene" uid="uid://bws644iyv7f0r" path="res://Scenes/salt.tscn" id="8_huasi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f027"]
@@ -20,12 +21,12 @@ player = NodePath("../BlackCat")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1181341414]
 offset_top = -2.0
-offset_right = 150.0
-offset_bottom = 49.0
+offset_right = 166.0
+offset_bottom = 48.0
 color = Color(0.78039217, 0.9411765, 0.84705883, 1)
 
 [node name="Mirror" parent="." unique_id=1934176071 groups=["Projectile"] instance=ExtResource("2_huasi")]
-position = Vector2(143, 31)
+position = Vector2(143, 36)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2059058637]
 collision_layer = 2
@@ -42,10 +43,12 @@ shape = SubResource("RectangleShape2D_0f027")
 position = Vector2(0, 28)
 
 [node name="Platform2" parent="." unique_id=1152231501 instance=ExtResource("4_mai8y")]
-position = Vector2(87, 38)
+position = Vector2(84, 44)
 
 [node name="BlackCat" parent="." unique_id=1722602674 instance=ExtResource("6_drdnd")]
 position = Vector2(9, 40)
 
 [node name="Salt" parent="." unique_id=1947284850 instance=ExtResource("8_huasi")]
 position = Vector2(21, 25)
+
+[node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_maf8m")]
