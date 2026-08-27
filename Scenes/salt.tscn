@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bws644iyv7f0r"]
+
+[ext_resource type="Script" uid="uid://bge8n3vg4kpay" path="res://Scenes/salt.gd" id="1_mxybt"]
+[ext_resource type="Texture2D" uid="uid://5q7bv2i88lwm" path="res://Sprites/spilled_salt.png" id="2_mxybt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s63ln"]
+atlas = ExtResource("2_mxybt")
+region = Rect2(0, 0, 12, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkup5"]
+atlas = ExtResource("2_mxybt")
+region = Rect2(0, 0, 12, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gc1l"]
+atlas = ExtResource("2_mxybt")
+region = Rect2(12, 0, 12, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hfny1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s63ln")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkup5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gc1l")
+}],
+"loop": false,
+"name": &"spilled",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxybt"]
+size = Vector2(4, 6)
+
+[node name="Salt" type="StaticBody2D" unique_id=1028450522]
+collision_layer = 64
+script = ExtResource("1_mxybt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=61845241]
+sprite_frames = SubResource("SpriteFrames_hfny1")
+animation = &"spilled"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1220976444]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_mxybt")
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="." unique_id=1249868955]
+position = Vector2(-3, 0)
+target_position = Vector2(-4, 0)
+
+[node name="RayCast2DRight" type="RayCast2D" parent="." unique_id=142400161]
+position = Vector2(-3, 0)
+target_position = Vector2(4, 0)

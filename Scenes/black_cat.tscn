@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4heodk4xhpe6" path="res://Scripts/black_cat.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://lo3hvvjbvyun" path="res://Sprites/smallcatwalk.png" id="2_ghijl"]
 [ext_resource type="Texture2D" uid="uid://d8oabn2ur5ca" path="res://Sprites/smallcatidle.png" id="3_ghijl"]
+[ext_resource type="Texture2D" uid="uid://dqcwwrsm5syc2" path="res://Sprites/nokia_swipe.png" id="4_0e054"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44cfe"]
 atlas = ExtResource("2_ghijl")
@@ -35,6 +36,18 @@ region = Rect2(0, 10, 10, 10)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ct3r"]
 atlas = ExtResource("3_ghijl")
 region = Rect2(10, 10, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rw4y"]
+atlas = ExtResource("4_0e054")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jax0f"]
+atlas = ExtResource("4_0e054")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e054"]
+atlas = ExtResource("4_0e054")
+region = Rect2(10, 0, 10, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lhvu3"]
 animations = [{
@@ -71,19 +84,45 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rw4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jax0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e054")
+}],
+"loop": true,
+"name": &"swipe",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
 size = Vector2(8, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e054"]
+size = Vector2(3, 2)
+
 [node name="BlackCat" type="CharacterBody2D" unique_id=1722602674 groups=["Player"]]
-collision_mask = 6
+collision_mask = 70
 script = ExtResource("1_ij6vw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1347056672]
 sprite_frames = SubResource("SpriteFrames_lhvu3")
-animation = &"idle"
+animation = &"swipe"
 autoplay = "default"
+frame = 1
+frame_progress = 0.6270474
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1908269517]
 shape = SubResource("RectangleShape2D_ij6vw")
+
+[node name="SwipeBox" type="Area2D" parent="." unique_id=1741229990]
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwipeBox" unique_id=1099853226]
+position = Vector2(4.5, 1)
+shape = SubResource("RectangleShape2D_0e054")

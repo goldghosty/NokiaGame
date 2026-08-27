@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://701mjri1jbh5"]
+
+[ext_resource type="Script" uid="uid://cjp6lbre3v610" path="res://start_scene.gd" id="1_mbe3m"]
+
+[node name="StartScene" type="Node2D" unique_id=1333314086]
+process_mode = 3
+script = ExtResource("1_mbe3m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1161625383]

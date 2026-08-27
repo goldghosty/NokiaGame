@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://nhe55pgfihi8"]
+
+[ext_resource type="Script" uid="uid://bxw5k0quo1cxa" path="res://dialogue_manager.gd" id="1_k6lpl"]
+[ext_resource type="Texture2D" uid="uid://b8gqv731hk4d7" path="res://Sprites/dialoguebox.png" id="2_jslty"]
+[ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="3_aal2s"]
+[ext_resource type="Texture2D" uid="uid://c2m150bqlxkr8" path="res://Sprites/blackcathead.png" id="4_aal2s"]
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=1724076962]
+process_mode = 3
+script = ExtResource("1_k6lpl")
+
+[node name="DialogueBox" type="Control" parent="." unique_id=1756471496]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox" unique_id=1367122917]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jslty")
+
+[node name="DialogueText" type="Label" parent="DialogueBox/TextureRect" unique_id=545581890]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -18.0
+offset_right = 39.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("3_aal2s")
+theme_override_font_sizes/font_size = 8
+text = "who am i?"
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox/TextureRect" unique_id=653830853]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 20.0
+offset_bottom = 25.0
+texture = ExtResource("4_aal2s")
