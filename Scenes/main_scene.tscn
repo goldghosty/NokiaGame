@@ -7,9 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://cl44w7wh1jiul" path="res://Scenes/black_cat.tscn" id="6_drdnd"]
 [ext_resource type="PackedScene" uid="uid://bp3ba2pi2mr6f" path="res://Scenes/ui_layer.tscn" id="7_maf8m"]
 [ext_resource type="PackedScene" uid="uid://bws644iyv7f0r" path="res://Scenes/salt.tscn" id="8_huasi"]
+[ext_resource type="PackedScene" uid="uid://c2mke3pjgegoy" path="res://Scenes/clover.tscn" id="8_m1efj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f027"]
 size = Vector2(88, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huasi"]
+size = Vector2(3, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1efj"]
+size = Vector2(3, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mai8y"]
+size = Vector2(3, 37)
 
 [node name="MainScene" type="Node2D" unique_id=2078736581]
 
@@ -52,3 +62,35 @@ position = Vector2(9, 40)
 position = Vector2(21, 25)
 
 [node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_maf8m")]
+
+[node name="Clover" parent="." unique_id=395231467 instance=ExtResource("8_m1efj")]
+position = Vector2(36, 39)
+
+[node name="InvisibleWall" type="StaticBody2D" parent="." unique_id=245561959]
+collision_layer = 128
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall" unique_id=177101715]
+position = Vector2(-1.5, 19)
+shape = SubResource("RectangleShape2D_huasi")
+
+[node name="InvisibleWall2" type="StaticBody2D" parent="." unique_id=1648605199]
+position = Vector2(168, 0)
+collision_layer = 128
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall2" unique_id=814508133]
+position = Vector2(-1.5, 19)
+shape = SubResource("RectangleShape2D_m1efj")
+
+[node name="InvisibleWall3" type="StaticBody2D" parent="." unique_id=640443925]
+position = Vector2(82, -16)
+collision_layer = 128
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall3" unique_id=976418116]
+position = Vector2(-1.5, 29.5)
+shape = SubResource("RectangleShape2D_mai8y")
+
+[node name="Clover" parent="InvisibleWall3" unique_id=1459154896 instance=ExtResource("8_m1efj")]
+position = Vector2(-32, 39)

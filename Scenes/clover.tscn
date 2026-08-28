@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c2mke3pjgegoy"]
+
+[ext_resource type="Script" uid="uid://cn7tfjalpugwm" path="res://clover.gd" id="1_327jk"]
+[ext_resource type="Texture2D" uid="uid://dved5xgxt72v0" path="res://Sprites/clover.png" id="1_f0scq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_327jk"]
+atlas = ExtResource("1_f0scq")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idkp1"]
+atlas = ExtResource("1_f0scq")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5py3j"]
+atlas = ExtResource("1_f0scq")
+region = Rect2(0, 10, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b0v6"]
+atlas = ExtResource("1_f0scq")
+region = Rect2(10, 10, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wa6is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_327jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idkp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5py3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b0v6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8urk"]
+size = Vector2(8, 10)
+
+[node name="Clover" type="Area2D" unique_id=1459154896]
+collision_layer = 16
+collision_mask = 129
+script = ExtResource("1_327jk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1506494184]
+sprite_frames = SubResource("SpriteFrames_wa6is")
+autoplay = "default"
+frame = 1
+frame_progress = 0.9757191
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1524258988]
+shape = SubResource("RectangleShape2D_c8urk")
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1383128668]
+target_position = Vector2(-7, 0)
+collision_mask = 128
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=853632391]
+target_position = Vector2(8, 0)
+collision_mask = 128

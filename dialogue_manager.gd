@@ -1,7 +1,10 @@
 extends CanvasLayer
 
+signal dialogue_complete
+
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: Label = $DialogueBox/TextureRect/DialogueText
+
 
 var dialogue_lines: Array[String] = []
 var current_line_index: int = 0
@@ -33,7 +36,7 @@ func advance_dialogue():
 		
 	else:
 		get_tree().paused = false
-		
+		dialogue_complete.emit()
 		is_dialogue_active = false
 		dialogue_box.visible = false
 		

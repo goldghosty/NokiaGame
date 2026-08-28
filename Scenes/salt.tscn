@@ -46,7 +46,6 @@ script = ExtResource("1_mxybt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=61845241]
 sprite_frames = SubResource("SpriteFrames_hfny1")
-animation = &"spilled"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1220976444]

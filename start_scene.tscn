@@ -6,4 +6,7 @@
 process_mode = 3
 script = ExtResource("1_mbe3m")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1161625383]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=397276789]
+offset_right = 85.0
+offset_bottom = 49.0
+color = Color(0.78039217, 0.9411765, 0.84705883, 1)
