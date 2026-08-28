@@ -3,6 +3,7 @@ extends Area2D
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+@onready var enemy_killed: AudioStreamPlayer2D = $EnemyKilled
 
 
 var enemy_speed = 20.0
@@ -25,6 +26,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Projectile") and clover_on_screen:
+		animated_sprite_2d.play("death")
+		await animated_sprite_2d.animation_finished
+		enemy_killed.play()
+		await enemy_killed.finished
 		queue_free()
 
 

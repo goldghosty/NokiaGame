@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://c2mke3pjgegoy"]
 
-[ext_resource type="Script" uid="uid://cn7tfjalpugwm" path="res://clover.gd" id="1_327jk"]
+[ext_resource type="Script" uid="uid://cn7tfjalpugwm" path="res://Scripts/clover.gd" id="1_327jk"]
 [ext_resource type="Texture2D" uid="uid://dved5xgxt72v0" path="res://Sprites/clover.png" id="1_f0scq"]
+[ext_resource type="Texture2D" uid="uid://dlemrjklgd0df" path="res://Sprites/clover_death.png" id="2_rmcxx"]
+[ext_resource type="AudioStream" uid="uid://d031qgoolupgd" path="res://Sounds/enemykill.mp3" id="3_e75hx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6fci"]
+atlas = ExtResource("2_rmcxx")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxew5"]
+atlas = ExtResource("2_rmcxx")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uvty"]
+atlas = ExtResource("2_rmcxx")
+region = Rect2(0, 10, 10, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_327jk"]
 atlas = ExtResource("1_f0scq")
@@ -23,6 +37,20 @@ region = Rect2(10, 10, 10, 10)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_v6fci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxew5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uvty")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_327jk")
 }, {
 "duration": 1.0,
@@ -42,16 +70,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8urk"]
 size = Vector2(8, 10)
 
-[node name="Clover" type="Area2D" unique_id=1459154896]
+[node name="Clover" type="Area2D" unique_id=1459154896 groups=["Enemy"]]
 collision_layer = 16
 collision_mask = 137
 script = ExtResource("1_327jk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1506494184]
 sprite_frames = SubResource("SpriteFrames_wa6is")
+animation = &"death"
 autoplay = "default"
-frame = 1
-frame_progress = 0.9757191
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1524258988]
 shape = SubResource("RectangleShape2D_c8urk")
@@ -65,5 +92,8 @@ target_position = Vector2(8, 0)
 collision_mask = 384
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1686474279]
+
+[node name="EnemyKilled" type="AudioStreamPlayer2D" parent="." unique_id=407077437]
+stream = ExtResource("3_e75hx")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

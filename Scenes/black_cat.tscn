@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lo3hvvjbvyun" path="res://Sprites/smallcatwalk.png" id="2_ghijl"]
 [ext_resource type="Texture2D" uid="uid://d8oabn2ur5ca" path="res://Sprites/smallcatidle.png" id="3_ghijl"]
 [ext_resource type="Texture2D" uid="uid://dqcwwrsm5syc2" path="res://Sprites/nokia_swipe.png" id="4_0e054"]
+[ext_resource type="AudioStream" uid="uid://dg6dijow1m0ih" path="res://Sounds/playerhurt.wav" id="5_3rw4y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44cfe"]
 atlas = ExtResource("2_ghijl")
@@ -100,11 +101,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
-size = Vector2(8, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rw4y"]
+radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e054"]
 size = Vector2(3, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jax0f"]
+size = Vector2(8, 8)
 
 [node name="BlackCat" type="CharacterBody2D" unique_id=1722602674 groups=["Player"]]
 collision_mask = 198
@@ -117,8 +121,8 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.6270474
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1908269517]
-shape = SubResource("RectangleShape2D_ij6vw")
+[node name="CollisionCircle" type="CollisionShape2D" parent="." unique_id=1744295674]
+shape = SubResource("CircleShape2D_3rw4y")
 
 [node name="SwipeBox" type="Area2D" parent="." unique_id=1741229990]
 collision_mask = 64
@@ -131,4 +135,14 @@ shape = SubResource("RectangleShape2D_0e054")
 wait_time = 5.0
 one_shot = true
 
+[node name="InjuredSound" type="AudioStreamPlayer2D" parent="." unique_id=1239673764]
+stream = ExtResource("5_3rw4y")
+
+[node name="HitArea" type="Area2D" parent="." unique_id=1228453219]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=663614802]
+shape = SubResource("RectangleShape2D_jax0f")
+
 [connection signal="timeout" from="HairballTimer" to="." method="_on_hairball_timer_timeout"]
+[connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]

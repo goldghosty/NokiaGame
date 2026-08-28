@@ -6,6 +6,7 @@ const SPEED = 20.0
 const JUMP_VELOCITY = -190.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hairball_timer: Timer = $HairballTimer
+@onready var injured_sound: AudioStreamPlayer2D = $InjuredSound
 
 func _process(delta: float) -> void:
 			
@@ -58,3 +59,8 @@ func shoot() -> void:
 
 func _on_hairball_timer_timeout() -> void:
 	Global.can_shoot = true
+
+
+func _on_hit_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		injured_sound.play()
