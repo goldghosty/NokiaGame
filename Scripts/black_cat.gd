@@ -3,7 +3,7 @@ extends CharacterBody2D
 var projectile = preload("res://Scenes/projectile.tscn")
 var facing_direction = 1
 const SPEED = 20.0
-const JUMP_VELOCITY = -175.0
+const JUMP_VELOCITY = -200.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hairball_timer: Timer = $HairballTimer
 

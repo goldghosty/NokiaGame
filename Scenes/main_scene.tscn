@@ -49,11 +49,23 @@ texture = ExtResource("3_m1efj")
 position = Vector2(44, 46)
 shape = SubResource("RectangleShape2D_0f027")
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=250614872]
+position = Vector2(84, 0)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=781025515]
+position = Vector2(42, 46)
+texture = ExtResource("3_m1efj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1242313507]
+position = Vector2(44, 46)
+shape = SubResource("RectangleShape2D_0f027")
+
 [node name="Platform" parent="." unique_id=1639619999 instance=ExtResource("4_mai8y")]
 position = Vector2(0, 28)
 
-[node name="Platform2" parent="." unique_id=1152231501 instance=ExtResource("4_mai8y")]
-position = Vector2(84, 44)
+[node name="Platform2" parent="." unique_id=640319436 instance=ExtResource("4_mai8y")]
+position = Vector2(86, 24)
 
 [node name="BlackCat" parent="." unique_id=1722602674 instance=ExtResource("6_drdnd")]
 position = Vector2(9, 40)
