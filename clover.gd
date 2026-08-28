@@ -2,11 +2,18 @@ extends Area2D
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 
 var enemy_speed = 20.0
 var direction : int = 1
+var clover_on_screen = false
  
+
+func _ready() -> void:
+	visible_on_screen_notifier_2d.screen_entered.connect(clover_screen_entered)
+	visible_on_screen_notifier_2d.screen_exited.connect(clover_screen_exited)
+	
 func _physics_process(delta: float) -> void:
 	if ray_cast_right.is_colliding():
 		direction  = -1
@@ -16,5 +23,13 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	position.x += direction * enemy_speed * delta
 
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Projectile") and clover_on_screen:
+		queue_free()
 
-	#move_and_slide()
+
+func clover_screen_entered():
+	clover_on_screen = true
+	
+func clover_screen_exited():
+	clover_on_screen = false

@@ -44,7 +44,7 @@ size = Vector2(8, 10)
 
 [node name="Clover" type="Area2D" unique_id=1459154896]
 collision_layer = 16
-collision_mask = 129
+collision_mask = 137
 script = ExtResource("1_327jk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1506494184]
@@ -63,3 +63,7 @@ collision_mask = 128
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=853632391]
 target_position = Vector2(8, 0)
 collision_mask = 384
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1686474279]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
