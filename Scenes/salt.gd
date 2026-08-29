@@ -13,7 +13,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if ray_cast_2d_left.is_colliding() and Input.is_action_just_pressed("swipe") and is_swipeable or ray_cast_2d_right.is_colliding() and Input.is_action_just_pressed("swipe") and is_swipeable:
 		animated_sprite_2d.play("spilled")
+		await animated_sprite_2d.animation_finished
 		is_swipeable = false
+		queue_free()
 	
 		
 			

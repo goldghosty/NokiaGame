@@ -64,7 +64,7 @@ color = Color(0.78039217, 0.9411765, 0.84705883, 1)
 position = Vector2(239, 36)
 
 [node name="PlatformLayer" type="TileMapLayer" parent="." unique_id=2120454897]
-tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAAAAAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQABAAAAAAADAAMAAQABAAAAAAAEAAMAAQABAAAAAAAFAAMAAQABAAAAAAAGAAMAAQABAAAAAAAHAAMAAQABAAAAAAAIAAMAAQABAAAAAAAJAAMAAQACAAAAAAAIAAEAAQABAAAAAAAHAAEAAQAAAAAAAAALAAIAAQAAAAAAAAAPAAIAAQACAAAAAAAOAAIAAQABAAAAAAANAAIAAQABAAAAAAAMAAIAAQABAAAAAAARAAMAAQABAAAAAAASAAMAAQABAAAAAAATAAMAAQABAAAAAAAUAAMAAQACAAAAAAAJAAEAAQABAAAAAAAKAAEAAQACAAAAAAAQAAMAAQAAAAAAAAASAAEAAQABAAAAAAATAAEAAQACAAAAAAARAAEAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAAAAAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQABAAAAAAADAAMAAQABAAAAAAAEAAMAAQABAAAAAAAFAAMAAQABAAAAAAAGAAMAAQABAAAAAAAHAAMAAQABAAAAAAAIAAMAAQABAAAAAAAJAAMAAQACAAAAAAAIAAEAAQABAAAAAAAHAAEAAQAAAAAAAAALAAIAAQAAAAAAAAAPAAIAAQACAAAAAAAOAAIAAQABAAAAAAANAAIAAQABAAAAAAAMAAIAAQABAAAAAAARAAMAAQABAAAAAAASAAMAAQABAAAAAAATAAMAAQABAAAAAAAUAAMAAQABAAAAAAAJAAEAAQABAAAAAAAKAAEAAQACAAAAAAAQAAMAAQAAAAAAAAASAAEAAQAAAAAAAAAVAAMAAQABAAAAAAAWAAMAAQACAAAAAAATAAEAAQABAAAAAAAUAAEAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_ioaeq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2059058637]
@@ -110,12 +110,6 @@ position = Vector2(21, 25)
 
 [node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_maf8m")]
 
-[node name="Clover" parent="." unique_id=395231467 instance=ExtResource("8_m1efj")]
-position = Vector2(128, 39)
-
-[node name="Clover2" parent="." unique_id=1459154896 instance=ExtResource("8_m1efj")]
-position = Vector2(50, 23)
-
 [node name="InvisibleWall" type="StaticBody2D" parent="." unique_id=245561959]
 collision_layer = 128
 collision_mask = 17
@@ -149,3 +143,18 @@ collision_mask = 17
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall3" unique_id=976418116]
 position = Vector2(-1.5, 29.5)
 shape = SubResource("RectangleShape2D_mai8y")
+
+[node name="Clover" parent="." unique_id=1459154896 instance=ExtResource("8_m1efj")]
+position = Vector2(56, 23)
+
+[node name="Clover2" parent="." unique_id=849456715 instance=ExtResource("8_m1efj")]
+position = Vector2(186, 39)
+
+[node name="Salt2" parent="." unique_id=1028450522 instance=ExtResource("8_huasi")]
+position = Vector2(101, 41)
+
+[node name="Salt3" parent="." unique_id=12547154 instance=ExtResource("8_huasi")]
+position = Vector2(159, 9)
+
+[node name="Salt4" parent="." unique_id=460533321 instance=ExtResource("8_huasi")]
+position = Vector2(76, 9)
