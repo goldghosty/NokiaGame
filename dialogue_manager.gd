@@ -4,12 +4,15 @@ signal dialogue_complete
 
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: Label = $DialogueBox/TextureRect/DialogueText
-
+@onready var cat_talk: AudioStreamPlayer2D = $CatTalk
+@export var cat_voice_one : AudioStream
+@export var cat_voice_two : AudioStream
 
 var dialogue_lines: Array[String] = []
 var current_line_index: int = 0
 var is_dialogue_active: bool = false
 var dialogue_speed = 0.05
+var use_first_voice : bool = true
 
 func _ready() -> void:
 	dialogue_box.visible = false
@@ -21,6 +24,7 @@ func start_dialogue(lines: Array[String]):
 	current_line_index = 0
 	is_dialogue_active = true
 	dialogue_box.visible = true
+	use_first_voice = true
 	show_line()
 	
 func _input(event):
@@ -44,6 +48,11 @@ func show_line():
 	dialogue_text.text = dialogue_lines[current_line_index]
 	dialogue_text.visible_ratio = 0.0
 	var duration = dialogue_text.text.length()* dialogue_speed
-	
+	if use_first_voice:
+		cat_talk.stream = cat_voice_one
+	if !use_first_voice:
+		cat_talk.stream = cat_voice_two
+	cat_talk.play()
+	use_first_voice = !use_first_voice
 	var tween = create_tween()
 	tween.tween_property(dialogue_text, "visible_ratio", 1.0, duration)

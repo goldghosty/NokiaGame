@@ -3,11 +3,15 @@
 [ext_resource type="Script" uid="uid://bxw5k0quo1cxa" path="res://dialogue_manager.gd" id="1_k6lpl"]
 [ext_resource type="Texture2D" uid="uid://b8gqv731hk4d7" path="res://Sprites/dialoguebox.png" id="2_jslty"]
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="3_aal2s"]
+[ext_resource type="AudioStream" uid="uid://b05o16jst7bgq" path="res://Sounds/cattalk2.wav" id="3_tqlrv"]
 [ext_resource type="Texture2D" uid="uid://c2m150bqlxkr8" path="res://Sprites/blackcathead.png" id="4_aal2s"]
+[ext_resource type="AudioStream" uid="uid://bjqipsxcg68dj" path="res://Sounds/cattalk.wav" id="5_bfllj"]
 
 [node name="DialogueManager" type="CanvasLayer" unique_id=1724076962]
 process_mode = 3
 script = ExtResource("1_k6lpl")
+cat_voice_one = ExtResource("5_bfllj")
+cat_voice_two = ExtResource("3_tqlrv")
 
 [node name="DialogueBox" type="Control" parent="." unique_id=1756471496]
 layout_mode = 3
@@ -52,3 +56,5 @@ offset_top = 6.0
 offset_right = 20.0
 offset_bottom = 25.0
 texture = ExtResource("4_aal2s")
+
+[node name="CatTalk" type="AudioStreamPlayer2D" parent="." unique_id=980072644]
