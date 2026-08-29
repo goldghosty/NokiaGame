@@ -16,16 +16,18 @@ func _ready() -> void:
 	visible_on_screen_notifier_2d.screen_exited.connect(clover_screen_exited)
 	
 func _physics_process(delta: float) -> void:
-	if ray_cast_right.is_colliding():
-		direction  = -1
-		animated_sprite_2d.flip_h = true
-	if ray_cast_left.is_colliding():
-		direction = 1
-		animated_sprite_2d.flip_h = false
-	position.x += direction * enemy_speed * delta
+	if clover_on_screen:
+		if ray_cast_right.is_colliding():
+			direction  = -1
+			animated_sprite_2d.flip_h = true
+		if ray_cast_left.is_colliding():
+			direction = 1
+			animated_sprite_2d.flip_h = false
+		position.x += direction * enemy_speed * delta
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Projectile") and clover_on_screen:
+		direction = 0
 		animated_sprite_2d.play("death")
 		await animated_sprite_2d.animation_finished
 		enemy_killed.play()

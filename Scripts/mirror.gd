@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+@onready var mirror_break: AudioStreamPlayer2D = $MirrorBreak
 
 var is_on_screen : bool = false
 var mirror_broken: bool = false
@@ -20,6 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Projectile") and !mirror_broken and is_on_screen:
 		print ("entered")
 		animated_sprite_2d.play("breaking")
+		mirror_break.play()
 		mirror_broken = true
 		
 func on_screen_entered():

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3uhqavx7mwvy" path="res://Scripts/mirror.gd" id="1_nk6sm"]
 [ext_resource type="Texture2D" uid="uid://14myx8qwjeum" path="res://Sprites/mirror.png" id="1_scjey"]
+[ext_resource type="AudioStream" uid="uid://c7k7bqpymms7h" path="res://Sounds/mirrorbreak.wav" id="3_16kbh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nk6sm"]
 atlas = ExtResource("1_scjey")
@@ -68,5 +69,8 @@ autoplay = "static"
 shape = SubResource("RectangleShape2D_scjey")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1199461863]
+
+[node name="MirrorBreak" type="AudioStreamPlayer2D" parent="." unique_id=157466387]
+stream = ExtResource("3_16kbh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
