@@ -1,44 +1,37 @@
-[gd_scene format=3 uid="uid://c2mke3pjgegoy"]
+[gd_scene format=3 uid="uid://evabdxbkusyt"]
 
-[ext_resource type="Script" uid="uid://cn7tfjalpugwm" path="res://Scripts/clover.gd" id="1_327jk"]
-[ext_resource type="Texture2D" uid="uid://dved5xgxt72v0" path="res://Sprites/clover.png" id="1_f0scq"]
-[ext_resource type="Texture2D" uid="uid://dlemrjklgd0df" path="res://Sprites/clover_death.png" id="2_rmcxx"]
-[ext_resource type="AudioStream" uid="uid://d031qgoolupgd" path="res://Sounds/enemykill.mp3" id="3_e75hx"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6fci"]
-atlas = ExtResource("2_rmcxx")
-region = Rect2(0, 0, 10, 10)
+[ext_resource type="Script" uid="uid://cn7tfjalpugwm" path="res://Scripts/clover.gd" id="1_wiawo"]
+[ext_resource type="Texture2D" uid="uid://dlemrjklgd0df" path="res://Sprites/clover_death.png" id="2_oa2gj"]
+[ext_resource type="Texture2D" uid="uid://b88e0iuae5jyp" path="res://Sprites/rabbit.png" id="3_wiawo"]
+[ext_resource type="AudioStream" uid="uid://d031qgoolupgd" path="res://Sounds/enemykill.mp3" id="4_hplpq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxew5"]
-atlas = ExtResource("2_rmcxx")
+atlas = ExtResource("2_oa2gj")
 region = Rect2(10, 0, 10, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6uvty"]
-atlas = ExtResource("2_rmcxx")
+atlas = ExtResource("2_oa2gj")
 region = Rect2(0, 10, 10, 10)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_327jk"]
-atlas = ExtResource("1_f0scq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa2gj"]
+atlas = ExtResource("3_wiawo")
 region = Rect2(0, 0, 10, 10)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idkp1"]
-atlas = ExtResource("1_f0scq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sksps"]
+atlas = ExtResource("3_wiawo")
 region = Rect2(10, 0, 10, 10)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5py3j"]
-atlas = ExtResource("1_f0scq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hplpq"]
+atlas = ExtResource("3_wiawo")
 region = Rect2(0, 10, 10, 10)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7b0v6"]
-atlas = ExtResource("1_f0scq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot52h"]
+atlas = ExtResource("3_wiawo")
 region = Rect2(10, 10, 10, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wa6is"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v6fci")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gxew5")
 }, {
@@ -51,16 +44,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_327jk")
+"texture": SubResource("AtlasTexture_oa2gj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_idkp1")
+"texture": SubResource("AtlasTexture_sksps")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5py3j")
+"texture": SubResource("AtlasTexture_hplpq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7b0v6")
+"texture": SubResource("AtlasTexture_ot52h")
 }],
 "loop": true,
 "name": &"default",
@@ -70,14 +63,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8urk"]
 size = Vector2(7, 10)
 
-[node name="Clover" type="Area2D" unique_id=1459154896 groups=["Enemy"]]
+[node name="Rabbit" type="Area2D" unique_id=1459154896 groups=["Enemy"]]
 collision_layer = 16
 collision_mask = 393
-script = ExtResource("1_327jk")
+script = ExtResource("1_wiawo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1506494184]
 sprite_frames = SubResource("SpriteFrames_wa6is")
-animation = &"death"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1524258988]
@@ -99,6 +91,6 @@ position = Vector2(0, -4)
 rect = Rect2(-5, -1, 10, 11)
 
 [node name="EnemyKilled" type="AudioStreamPlayer2D" parent="." unique_id=407077437]
-stream = ExtResource("3_e75hx")
+stream = ExtResource("4_hplpq")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var label: Label = $Label
+@onready var health_label: Label = $TextureRect/HealthLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,3 +14,5 @@ func _process(delta: float) -> void:
 		label.text = "READY"
 	else:
 		label.text = "CHARGING"
+
+	health_label.text = str(Global.player_health)
