@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://bs7wlosv1teiw"]
 
 [ext_resource type="Script" uid="uid://n2sff2gdoi0f" path="res://Scripts/camera_2d.gd" id="1_2mgoq"]
+[ext_resource type="Script" uid="uid://5wykvgycnxpr" path="res://Scenes/level_2.gd" id="1_42uki"]
+[ext_resource type="PackedScene" uid="uid://b1x17tfhtcjkf" path="res://Scenes/main_scene.tscn" id="2_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://6ce5vjna8n6r" path="res://Scenes/mirror.tscn" id="2_uhnj4"]
 [ext_resource type="Texture2D" uid="uid://b5uk236m8uucb" path="res://Sprites/platformtile.png" id="3_42uki"]
 [ext_resource type="Texture2D" uid="uid://dhwkqmaddgrf5" path="res://Sprites/platformlong.png" id="4_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://cl44w7wh1jiul" path="res://Scenes/black_cat.tscn" id="5_ait6c"]
+[ext_resource type="Script" uid="uid://b6k8rk68jdmoe" path="res://Scenes/mirror2.gd" id="6_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://bp3ba2pi2mr6f" path="res://Scenes/ui_layer.tscn" id="7_bl0du"]
 [ext_resource type="PackedScene" uid="uid://evabdxbkusyt" path="res://Scenes/rabbit.tscn" id="8_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://b504yse55xls" path="res://Scenes/umbrella.tscn" id="8_uhnj4"]
@@ -41,6 +44,18 @@ size = Vector2(3, 37)
 size = Vector2(3, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioaeq"]
+size = Vector2(6, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ait6c"]
+size = Vector2(6, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcilj"]
+size = Vector2(6, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42uki"]
+size = Vector2(3, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7v2y"]
 size = Vector2(3, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1efj"]
@@ -53,6 +68,8 @@ size = Vector2(253, 3)
 size = Vector2(3, 58)
 
 [node name="Level2" type="Node2D" unique_id=2078736581]
+script = ExtResource("1_42uki")
+next_scene = ExtResource("2_t7v2y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1012595050 node_paths=PackedStringArray("player")]
 position = Vector2(42, 24)
@@ -66,61 +83,55 @@ offset_right = 275.0
 offset_bottom = 48.0
 color = Color(0.78039217, 0.9411765, 0.84705883, 1)
 
-[node name="Mirror" parent="." unique_id=1934176071 groups=["Projectile"] instance=ExtResource("2_uhnj4")]
+[node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_bl0du")]
+
+[node name="Mirror2" parent="." unique_id=1934176071 groups=["Projectile"] instance=ExtResource("2_uhnj4")]
 position = Vector2(239, 36)
+script = ExtResource("6_t7v2y")
 
 [node name="PlatformLayer" type="TileMapLayer" parent="." unique_id=2120454897]
-tile_map_data = PackedByteArray("AAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQACAAAAAAADAAIAAQAAAAAAAAAEAAIAAQABAAAAAAAFAAIAAQABAAAAAAAGAAIAAQABAAAAAAAHAAIAAQACAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQABAAAAAAAKAAMAAQABAAAAAAALAAMAAQABAAAAAAAMAAMAAQACAAAAAAANAAEAAQAAAAAAAAAOAAEAAQABAAAAAAAPAAEAAQABAAAAAAAQAAEAAQABAAAAAAARAAEAAQABAAAAAAASAAEAAQACAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQABAAAAAAARAAMAAQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQACAAAAAAADAAIAAQAAAAAAAAAEAAIAAQABAAAAAAAFAAIAAQABAAAAAAAGAAIAAQABAAAAAAAHAAIAAQACAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQABAAAAAAAKAAMAAQABAAAAAAALAAMAAQABAAAAAAAMAAMAAQACAAAAAAANAAEAAQAAAAAAAAAOAAEAAQABAAAAAAAPAAEAAQABAAAAAAAQAAEAAQABAAAAAAARAAEAAQABAAAAAAASAAEAAQACAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQABAAAAAAARAAMAAQACAAAAAAAUAAMAAQAAAAAAAAAVAAMAAQABAAAAAAAWAAMAAQACAAAAAAAXAAIAAQAAAAAAAAAYAAIAAQABAAAAAAAZAAIAAQABAAAAAAAaAAIAAQABAAAAAAAbAAIAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_ioaeq")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2059058637]
-collision_layer = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=166219237]
-position = Vector2(42, 46)
-texture = ExtResource("4_t7v2y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1976738619]
-position = Vector2(44, 46)
-shape = SubResource("RectangleShape2D_0f027")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=250614872]
-position = Vector2(84, 0)
-collision_layer = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=781025515]
-position = Vector2(42, 46)
-texture = ExtResource("4_t7v2y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1242313507]
-position = Vector2(44, 46)
-shape = SubResource("RectangleShape2D_0f027")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1925012532]
-position = Vector2(168, 0)
-collision_layer = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=170962388]
-position = Vector2(42, 46)
-texture = ExtResource("4_t7v2y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1646365385]
-position = Vector2(44, 46)
-shape = SubResource("RectangleShape2D_0f027")
 
 [node name="BlackCat" parent="." unique_id=1722602674 instance=ExtResource("5_ait6c")]
 position = Vector2(9, 40)
 
-[node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_bl0du")]
+[node name="Floors" type="Node" parent="." unique_id=1929853444]
 
-[node name="Rabbit" parent="." unique_id=1459154896 instance=ExtResource("8_2mgoq")]
-position = Vector2(38, 15)
+[node name="StaticBody2D2" type="StaticBody2D" parent="Floors" unique_id=250614872]
+position = Vector2(84, 0)
+collision_layer = 2
 
-[node name="Umbrella" parent="." unique_id=1028450522 instance=ExtResource("8_uhnj4")]
-position = Vector2(54, 16)
+[node name="Sprite2D" type="Sprite2D" parent="Floors/StaticBody2D2" unique_id=781025515]
+position = Vector2(42, 46)
+texture = ExtResource("4_t7v2y")
 
-[node name="Umbrella2" parent="." unique_id=1739771723 instance=ExtResource("8_uhnj4")]
-position = Vector2(11, 24)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D2" unique_id=1242313507]
+position = Vector2(44, 46)
+shape = SubResource("RectangleShape2D_0f027")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Floors" unique_id=1925012532]
+position = Vector2(168, 0)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Floors/StaticBody2D3" unique_id=170962388]
+position = Vector2(42, 46)
+texture = ExtResource("4_t7v2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D3" unique_id=1646365385]
+position = Vector2(44, 46)
+shape = SubResource("RectangleShape2D_0f027")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floors" unique_id=2059058637]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Floors/StaticBody2D" unique_id=166219237]
+position = Vector2(42, 46)
+texture = ExtResource("4_t7v2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D" unique_id=1976738619]
+position = Vector2(44, 46)
+shape = SubResource("RectangleShape2D_0f027")
 
 [node name="Walls" type="Node" parent="." unique_id=425504250]
 
@@ -160,6 +171,42 @@ collision_mask = 16
 position = Vector2(71, 30)
 shape = SubResource("RectangleShape2D_ioaeq")
 
+[node name="InvisibleWall10" type="StaticBody2D" parent="Walls" unique_id=1383375421]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall10" unique_id=1475768358]
+position = Vector2(86, 42)
+shape = SubResource("RectangleShape2D_ait6c")
+
+[node name="InvisibleWall11" type="StaticBody2D" parent="Walls" unique_id=237155536]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall11" unique_id=1144023066]
+position = Vector2(2, 42)
+shape = SubResource("RectangleShape2D_vcilj")
+
+[node name="InvisibleWall7" type="StaticBody2D" parent="Walls" unique_id=525229768]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall7" unique_id=1542572906]
+position = Vector2(94, 13)
+shape = SubResource("RectangleShape2D_42uki")
+
+[node name="InvisibleWall9" type="StaticBody2D" parent="Walls" unique_id=1171247821]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall9" unique_id=1072644515]
+position = Vector2(143, 13)
+shape = SubResource("RectangleShape2D_t7v2y")
+
 [node name="SideWall" type="StaticBody2D" parent="Walls" unique_id=1648605199]
 position = Vector2(253, 0)
 collision_layer = 128
@@ -185,14 +232,39 @@ collision_mask = 17
 position = Vector2(-1.5, 19)
 shape = SubResource("RectangleShape2D_huasi")
 
-[node name="Umbrella3" parent="." unique_id=871247590 instance=ExtResource("8_uhnj4")]
-position = Vector2(95, 24)
+[node name="Enemies" type="Node" parent="." unique_id=1188566252]
 
-[node name="Rabbit2" parent="." unique_id=613159365 instance=ExtResource("8_2mgoq")]
+[node name="Rabbit5" parent="Enemies" unique_id=1620688333 instance=ExtResource("8_2mgoq")]
+position = Vector2(115, 39)
+
+[node name="Rabbit4" parent="Enemies" unique_id=449348923 instance=ExtResource("8_2mgoq")]
+position = Vector2(220, 39)
+
+[node name="Rabbit3" parent="Enemies" unique_id=1994593648 instance=ExtResource("8_2mgoq")]
+position = Vector2(194, 15)
+
+[node name="Rabbit2" parent="Enemies" unique_id=613159365 instance=ExtResource("8_2mgoq")]
 position = Vector2(125, 7)
 
-[node name="Umbrella4" parent="." unique_id=1257111245 instance=ExtResource("8_uhnj4")]
+[node name="Rabbit" parent="Enemies" unique_id=1459154896 instance=ExtResource("8_2mgoq")]
+position = Vector2(38, 15)
+
+[node name="Items" type="Node" parent="." unique_id=633148793]
+
+[node name="Umbrella6" parent="Items" unique_id=619277069 instance=ExtResource("8_uhnj4")]
+position = Vector2(206, 16)
+
+[node name="Umbrella5" parent="Items" unique_id=1477462833 instance=ExtResource("8_uhnj4")]
+position = Vector2(190, 40)
+
+[node name="Umbrella4" parent="Items" unique_id=1257111245 instance=ExtResource("8_uhnj4")]
 position = Vector2(143, 8)
 
-[node name="Rabbit3" parent="." unique_id=1994593648 instance=ExtResource("8_2mgoq")]
-position = Vector2(218, 39)
+[node name="Umbrella3" parent="Items" unique_id=871247590 instance=ExtResource("8_uhnj4")]
+position = Vector2(95, 24)
+
+[node name="Umbrella" parent="Items" unique_id=1028450522 instance=ExtResource("8_uhnj4")]
+position = Vector2(54, 16)
+
+[node name="Umbrella2" parent="Items" unique_id=1739771723 instance=ExtResource("8_uhnj4")]
+position = Vector2(11, 24)
