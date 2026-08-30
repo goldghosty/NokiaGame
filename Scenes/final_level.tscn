@@ -1,0 +1,108 @@
+[gd_scene format=4 uid="uid://bf28ltyd87riu"]
+
+[ext_resource type="Script" uid="uid://n2sff2gdoi0f" path="res://Scripts/camera_2d.gd" id="3_x8f2t"]
+[ext_resource type="PackedScene" uid="uid://bp3ba2pi2mr6f" path="res://Scenes/ui_layer.tscn" id="4_4vpy6"]
+[ext_resource type="Texture2D" uid="uid://b5uk236m8uucb" path="res://Sprites/platformtile.png" id="7_20vd3"]
+[ext_resource type="PackedScene" uid="uid://bffvcdpd5lxbf" path="res://Scenes/lucky_cat.tscn" id="8_hv6ci"]
+[ext_resource type="PackedScene" uid="uid://cl44w7wh1jiul" path="res://Scenes/black_cat.tscn" id="8_vpnb2"]
+[ext_resource type="Texture2D" uid="uid://dhwkqmaddgrf5" path="res://Sprites/platformlong.png" id="9_4qx0g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76v2p"]
+texture = ExtResource("7_20vd3")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_drdnd"]
+texture = ExtResource("7_20vd3")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -0.10152531, 4, -0.10152531, 4, 4, -4, 4)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -0.10152531, 4, -0.10152531, 4, 4, -4, 4)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -0.10152531, 4, -0.10152531, 4, 4, -4, 4)
+2:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_ioaeq"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_76v2p")
+sources/1 = SubResource("TileSetAtlasSource_drdnd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f027"]
+size = Vector2(88, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1efj"]
+size = Vector2(2, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76v2p"]
+size = Vector2(86, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huasi"]
+size = Vector2(3, 58)
+
+[node name="FinalLevel" type="Node2D" unique_id=2078736581]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1012595050 node_paths=PackedStringArray("player")]
+position = Vector2(42, 24)
+anchor_mode = 0
+script = ExtResource("3_x8f2t")
+player = NodePath("../BlackCat")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1181341414]
+offset_top = -2.0
+offset_right = 84.0
+offset_bottom = 48.0
+color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+
+[node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("4_4vpy6")]
+
+[node name="PlatformLayer" type="TileMapLayer" parent="." unique_id=2120454897]
+tile_map_data = PackedByteArray("AAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQACAAAAAAAAAAEAAQAAAAAAAAABAAEAAQACAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQABAAAAAAAJAAMAAQACAAAAAAA=")
+tile_set = SubResource("TileSet_ioaeq")
+
+[node name="BlackCat" parent="." unique_id=1722602674 instance=ExtResource("8_vpnb2")]
+position = Vector2(9, 40)
+
+[node name="LuckyCat" parent="." unique_id=435307116 instance=ExtResource("8_hv6ci")]
+position = Vector2(38, 21)
+
+[node name="Floors" type="Node" parent="." unique_id=1929853444]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floors" unique_id=2059058637]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Floors/StaticBody2D" unique_id=166219237]
+position = Vector2(42, 46)
+texture = ExtResource("9_4qx0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floors/StaticBody2D" unique_id=1976738619]
+position = Vector2(44, 46)
+shape = SubResource("RectangleShape2D_0f027")
+
+[node name="Walls" type="Node" parent="." unique_id=425504250]
+
+[node name="SideWall" type="StaticBody2D" parent="Walls" unique_id=1648605199]
+position = Vector2(253, 0)
+collision_layer = 128
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SideWall" unique_id=814508133]
+position = Vector2(-169, 19)
+shape = SubResource("RectangleShape2D_m1efj")
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1942590522]
+collision_layer = 128
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=19034964]
+position = Vector2(42, -3.5)
+shape = SubResource("RectangleShape2D_76v2p")
+
+[node name="InvisibleWall" type="StaticBody2D" parent="Walls" unique_id=245561959]
+collision_layer = 128
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall" unique_id=177101715]
+position = Vector2(-1.5, 19)
+shape = SubResource("RectangleShape2D_huasi")

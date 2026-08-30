@@ -9,6 +9,7 @@
 
 [node name="DialogueManager" type="CanvasLayer" unique_id=1724076962]
 process_mode = 3
+layer = 100
 script = ExtResource("1_k6lpl")
 cat_voice_one = ExtResource("5_bfllj")
 cat_voice_two = ExtResource("3_tqlrv")
@@ -20,6 +21,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DialogueBox" unique_id=1080364840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.78039217, 0.9411765, 0.84705883, 1)
 
 [node name="TextureRect" type="TextureRect" parent="DialogueBox" unique_id=1367122917]
 layout_mode = 1
