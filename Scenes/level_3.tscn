@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://b7a8vafmdna7x"]
 
-[ext_resource type="Script" uid="uid://5wykvgycnxpr" path="res://Scenes/level_2.gd" id="1_jtv8s"]
+[ext_resource type="Script" uid="uid://cu5qhq2ygrqsc" path="res://Scenes/level_3.gd" id="1_5rvg2"]
 [ext_resource type="PackedScene" uid="uid://bf28ltyd87riu" path="res://Scenes/final_level.tscn" id="2_c81s1"]
 [ext_resource type="Script" uid="uid://n2sff2gdoi0f" path="res://Scripts/camera_2d.gd" id="3_n4vm5"]
 [ext_resource type="PackedScene" uid="uid://bp3ba2pi2mr6f" path="res://Scenes/ui_layer.tscn" id="4_fxnjf"]
+[ext_resource type="Script" uid="uid://b404glxpinktr" path="res://Scenes/mirror3.gd" id="5_jtv8s"]
 [ext_resource type="PackedScene" uid="uid://6ce5vjna8n6r" path="res://Scenes/mirror.tscn" id="5_xjeco"]
-[ext_resource type="Script" uid="uid://b6k8rk68jdmoe" path="res://Scenes/mirror2.gd" id="6_j77fg"]
 [ext_resource type="Texture2D" uid="uid://b5uk236m8uucb" path="res://Sprites/platformtile.png" id="7_ki8bc"]
 [ext_resource type="PackedScene" uid="uid://cl44w7wh1jiul" path="res://Scenes/black_cat.tscn" id="8_nbwsh"]
 [ext_resource type="Texture2D" uid="uid://dhwkqmaddgrf5" path="res://Sprites/platformlong.png" id="9_kgmqw"]
@@ -65,7 +65,7 @@ size = Vector2(253, 3)
 size = Vector2(3, 58)
 
 [node name="Level3" type="Node2D" unique_id=2078736581]
-script = ExtResource("1_jtv8s")
+script = ExtResource("1_5rvg2")
 next_scene = ExtResource("2_c81s1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1012595050 node_paths=PackedStringArray("player")]
@@ -82,9 +82,10 @@ color = Color(0.78039217, 0.9411765, 0.84705883, 1)
 
 [node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("4_fxnjf")]
 
-[node name="Mirror2" parent="." unique_id=1934176071 groups=["Projectile"] instance=ExtResource("5_xjeco")]
+[node name="Mirror3" parent="." unique_id=1934176071 groups=["Projectile"] instance=ExtResource("5_xjeco")]
 position = Vector2(239, 36)
-script = ExtResource("6_j77fg")
+script = ExtResource("5_jtv8s")
+next_scene = ExtResource("2_c81s1")
 
 [node name="PlatformLayer" type="TileMapLayer" parent="." unique_id=2120454897]
 tile_map_data = PackedByteArray("AAANAAIAAQAAAAAAAAAOAAIAAQABAAAAAAAPAAIAAQABAAAAAAAQAAIAAQABAAAAAAARAAIAAQACAAAAAAALAAMAAQAAAAAAAAAMAAMAAQABAAAAAAANAAMAAQACAAAAAAABAAMAAQAAAAAAAAACAAMAAQABAAAAAAADAAMAAQACAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQABAAAAAAAIAAMAAQACAAAAAAADAAEAAQAAAAAAAAAEAAEAAQABAAAAAAAFAAEAAQABAAAAAAAGAAEAAQABAAAAAAAHAAEAAQACAAAAAAASAAMAAQAAAAAAAAATAAMAAQACAAAAAAAWAAMAAQAAAAAAAAAfAAIAAQACAAAAAAAeAAIAAQABAAAAAAAdAAIAAQABAAAAAAAcAAIAAQABAAAAAAAbAAIAAQABAAAAAAAaAAIAAQAAAAAAAAAXAAMAAQACAAAAAAA=")

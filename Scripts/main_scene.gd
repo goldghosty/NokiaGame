@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 		Global.level_one_complete = true
 
 	if mirror.ready_to_change == true:
-		if Global.rewards_earned < 6:
+		if Global.salt_spilled < 6:
 			DialogueManager.start_dialogue(level_one_dialogue)
 		else:
 			DialogueManager.start_dialogue(level_one_best_dialogue)

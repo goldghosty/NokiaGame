@@ -7,8 +7,8 @@ var level_two_complete = false
 var level_three_complete = false
 var level_four_complete = false
 var ladders = 0
-var umbrellas = 0
-var rewards_earned = 0
+var umbrellas_opened = 0
+var salt_spilled = 0
 var enemies_killed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

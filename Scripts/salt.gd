@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play("spilled")
 		await animated_sprite_2d.animation_finished
 		is_swipeable = false
-		Global.rewards_earned += 1
+		Global.salt_spilled += 1
 	
 		
 			

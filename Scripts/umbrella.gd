@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play("open")
 		await animated_sprite_2d.animation_finished
 		is_swipeable = false
-		Global.rewards_earned += 1
+		Global.umbrellas_opened += 1
 		
 	
 		
