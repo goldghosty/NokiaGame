@@ -5,6 +5,20 @@ var level_completed = false
 
 @export var next_scene : PackedScene
 
+var tutorial_dialogue :Array[String] = [
+	"Okay, let me give you a quick rundown",
+	"Move left and right with arrow keys",
+	"Use X to interact with items",
+	"Use Z to shoot a big hairball.",
+	"Hairballs do need to charge up though.",
+	"I'll tell you when I'm ready again.",
+	"Use space bar to jump, duh.",
+	"Down arrow to go thru platforms.",
+	"Hairballs break mirrors to the next level.",
+	"BUT only if you've beat all the enemies.",
+	"That should do it, let's gooooo!"
+	
+]
 
 var level_one_dialogue :Array[String] = [
 	"Seems like we didn't spill all of the salt.",
@@ -25,6 +39,7 @@ var level_one_best_dialogue :Array[String] = [
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DialogueManager.start_dialogue(tutorial_dialogue)
 	Global.can_shoot = true
 
 
