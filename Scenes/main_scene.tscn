@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://b1x17tfhtcjkf"]
 
+[ext_resource type="Script" uid="uid://dv0naw8i7bfxx" path="res://Scripts/main_scene.gd" id="1_m1efj"]
 [ext_resource type="Script" uid="uid://n2sff2gdoi0f" path="res://Scripts/camera_2d.gd" id="1_maf8m"]
 [ext_resource type="PackedScene" uid="uid://6ce5vjna8n6r" path="res://Scenes/mirror.tscn" id="2_huasi"]
 [ext_resource type="Texture2D" uid="uid://dhwkqmaddgrf5" path="res://Sprites/platformlong.png" id="3_m1efj"]
 [ext_resource type="Texture2D" uid="uid://b5uk236m8uucb" path="res://Sprites/platformtile.png" id="3_mai8y"]
+[ext_resource type="PackedScene" uid="uid://bs7wlosv1teiw" path="res://Scenes/level_2.tscn" id="4_mai8y"]
 [ext_resource type="PackedScene" uid="uid://cl44w7wh1jiul" path="res://Scenes/black_cat.tscn" id="6_drdnd"]
 [ext_resource type="PackedScene" uid="uid://bp3ba2pi2mr6f" path="res://Scenes/ui_layer.tscn" id="7_maf8m"]
 [ext_resource type="PackedScene" uid="uid://bws644iyv7f0r" path="res://Scenes/salt.tscn" id="8_huasi"]
@@ -55,7 +57,9 @@ size = Vector2(3, 37)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ewk0"]
 size = Vector2(3, 37)
 
-[node name="MainScene" type="Node2D" unique_id=2078736581]
+[node name="LevelOne" type="Node2D" unique_id=2078736581]
+script = ExtResource("1_m1efj")
+next_scene = ExtResource("4_mai8y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1012595050 node_paths=PackedStringArray("player")]
 position = Vector2(42, 24)
@@ -71,6 +75,7 @@ color = Color(0.78039217, 0.9411765, 0.84705883, 1)
 
 [node name="Mirror" parent="." unique_id=1934176071 groups=["Projectile"] instance=ExtResource("2_huasi")]
 position = Vector2(239, 36)
+next_scene = ExtResource("4_mai8y")
 
 [node name="PlatformLayer" type="TileMapLayer" parent="." unique_id=2120454897]
 tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAAAAAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQABAAAAAAADAAMAAQABAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQABAAAAAAAIAAMAAQABAAAAAAASAAEAAQAAAAAAAAATAAEAAQABAAAAAAAUAAEAAQACAAAAAAANAAIAAQACAAAAAAAOAAMAAQAAAAAAAAAPAAMAAQABAAAAAAAQAAMAAQABAAAAAAARAAMAAQABAAAAAAASAAMAAQACAAAAAAAVAAMAAQAAAAAAAAAWAAMAAQABAAAAAAAXAAMAAQACAAAAAAAbAAIAAQAAAAAAAAAcAAIAAQABAAAAAAAdAAIAAQABAAAAAAAeAAIAAQACAAAAAAAZAAMAAQAAAAAAAAAaAAMAAQACAAAAAAAJAAMAAQABAAAAAAAKAAMAAQABAAAAAAALAAMAAQACAAAAAAAMAAIAAQAAAAAAAAAEAAMAAQACAAAAAAA=")
@@ -180,6 +185,15 @@ collision_mask = 16
 position = Vector2(134, 21)
 shape = SubResource("RectangleShape2D_7ewk0")
 
+[node name="InvisibleWall8" type="StaticBody2D" parent="." unique_id=2110448463]
+position = Vector2(34, 5)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall8" unique_id=1280370699]
+position = Vector2(134, 21)
+shape = SubResource("RectangleShape2D_7ewk0")
+
 [node name="Clover4" parent="." unique_id=220708536 instance=ExtResource("8_m1efj")]
 position = Vector2(9, 23)
 
@@ -203,3 +217,6 @@ position = Vector2(128, 23)
 
 [node name="Clover3" parent="." unique_id=498935071 instance=ExtResource("8_m1efj")]
 position = Vector2(228, 39)
+
+[node name="Salt6" parent="." unique_id=950789797 instance=ExtResource("8_huasi")]
+position = Vector2(183, 25)

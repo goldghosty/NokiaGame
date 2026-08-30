@@ -18,15 +18,14 @@ func _ready() -> void:
 
 	
 func _physics_process(delta: float) -> void:
-	if ray_cast_right.is_colliding():
-		direction  = -1
-		print("collided")
-		animated_sprite_2d.flip_h = true
-	elif ray_cast_left.is_colliding():
-		direction = 1
-		print("collided left")
-		animated_sprite_2d.flip_h = false
-	position.x += direction * enemy_speed * delta
+	if clover_on_screen:
+		if ray_cast_right.is_colliding():
+			direction  = -1
+			animated_sprite_2d.flip_h = true
+		elif ray_cast_left.is_colliding():
+			direction = 1
+			animated_sprite_2d.flip_h = false
+		position.x += direction * enemy_speed * delta
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Projectile") and clover_on_screen:
@@ -35,8 +34,7 @@ func _on_area_entered(area: Area2D) -> void:
 		enemy_killed.play()
 		animated_sprite_2d.play("death")
 		await animated_sprite_2d.animation_finished
-		
-		#await enemy_killed.finished
+		Global.enemies_killed += 1
 		queue_free()
 
 

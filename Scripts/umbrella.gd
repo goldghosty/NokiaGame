@@ -18,7 +18,8 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play("open")
 		await animated_sprite_2d.animation_finished
 		is_swipeable = false
-		queue_free()
+		Global.rewards_earned += 1
+		
 	
 		
 			

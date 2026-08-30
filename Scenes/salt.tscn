@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bws644iyv7f0r"]
 
-[ext_resource type="Script" uid="uid://bge8n3vg4kpay" path="res://Scenes/salt.gd" id="1_mxybt"]
+[ext_resource type="Script" uid="uid://bge8n3vg4kpay" path="res://Scripts/salt.gd" id="1_mxybt"]
 [ext_resource type="Texture2D" uid="uid://5q7bv2i88lwm" path="res://Sprites/spilled_salt.png" id="2_mxybt"]
 [ext_resource type="AudioStream" uid="uid://5tv8jjp1ylom" path="res://Sounds/good_sound.wav" id="3_s63ln"]
 

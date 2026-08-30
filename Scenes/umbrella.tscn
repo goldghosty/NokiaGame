@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b504yse55xls"]
 
-[ext_resource type="Script" uid="uid://dfg1xtbmah5n1" path="res://Scenes/umbrella.gd" id="1_wvhdq"]
+[ext_resource type="Script" uid="uid://dfg1xtbmah5n1" path="res://Scripts/umbrella.gd" id="1_wvhdq"]
 [ext_resource type="Texture2D" uid="uid://qfd0ncr5w2kx" path="res://Sprites/umbrella.png" id="2_dskdi"]
 [ext_resource type="AudioStream" uid="uid://5tv8jjp1ylom" path="res://Sounds/good_sound.wav" id="3_04q1k"]
 

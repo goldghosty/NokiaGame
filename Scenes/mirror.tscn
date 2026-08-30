@@ -55,12 +55,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scjey"]
 size = Vector2(12, 16)
 
-[node name="Mirror" type="Area2D" unique_id=1934176071]
+[node name="Mirror" type="Area2D" unique_id=1934176071 groups=["Mirror"]]
 collision_layer = 4
-collision_mask = 8
+collision_mask = 9
 script = ExtResource("1_nk6sm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274171324]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274171324 groups=["Mirror"]]
 sprite_frames = SubResource("SpriteFrames_8iskm")
 animation = &"breaking"
 autoplay = "static"
@@ -74,3 +74,4 @@ shape = SubResource("RectangleShape2D_scjey")
 stream = ExtResource("3_16kbh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

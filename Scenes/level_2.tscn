@@ -34,14 +34,8 @@ sources/1 = SubResource("TileSetAtlasSource_drdnd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0f027"]
 size = Vector2(88, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_huasi"]
-size = Vector2(3, 58)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_76v2p"]
-size = Vector2(253, 3)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1efj"]
-size = Vector2(3, 58)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drdnd"]
+size = Vector2(3, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mai8y"]
 size = Vector2(3, 37)
@@ -49,11 +43,14 @@ size = Vector2(3, 37)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioaeq"]
 size = Vector2(3, 37)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_drdnd"]
-size = Vector2(3, 37)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1efj"]
+size = Vector2(3, 58)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ewk0"]
-size = Vector2(3, 37)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76v2p"]
+size = Vector2(253, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huasi"]
+size = Vector2(3, 58)
 
 [node name="Level2" type="Node2D" unique_id=2078736581]
 
@@ -73,7 +70,7 @@ color = Color(0.78039217, 0.9411765, 0.84705883, 1)
 position = Vector2(239, 36)
 
 [node name="PlatformLayer" type="TileMapLayer" parent="." unique_id=2120454897]
-tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAAAAAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQABAAAAAAADAAMAAQABAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQABAAAAAAAIAAMAAQABAAAAAAASAAEAAQAAAAAAAAATAAEAAQABAAAAAAAUAAEAAQACAAAAAAANAAIAAQACAAAAAAAOAAMAAQAAAAAAAAAPAAMAAQABAAAAAAAQAAMAAQABAAAAAAARAAMAAQABAAAAAAASAAMAAQACAAAAAAAVAAMAAQAAAAAAAAAWAAMAAQABAAAAAAAXAAMAAQACAAAAAAAbAAIAAQAAAAAAAAAcAAIAAQABAAAAAAAdAAIAAQABAAAAAAAeAAIAAQACAAAAAAAZAAMAAQAAAAAAAAAaAAMAAQACAAAAAAAJAAMAAQABAAAAAAAKAAMAAQABAAAAAAALAAMAAQACAAAAAAAMAAIAAQAAAAAAAAAEAAMAAQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAAQAAAAAAAAABAAMAAQABAAAAAAACAAMAAQACAAAAAAADAAIAAQAAAAAAAAAEAAIAAQABAAAAAAAFAAIAAQABAAAAAAAGAAIAAQABAAAAAAAHAAIAAQACAAAAAAAIAAMAAQAAAAAAAAAJAAMAAQABAAAAAAAKAAMAAQABAAAAAAALAAMAAQABAAAAAAAMAAMAAQACAAAAAAANAAEAAQAAAAAAAAAOAAEAAQABAAAAAAAPAAEAAQABAAAAAAAQAAEAAQABAAAAAAARAAEAAQABAAAAAAASAAEAAQACAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQABAAAAAAARAAMAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_ioaeq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2059058637]
@@ -116,69 +113,86 @@ position = Vector2(9, 40)
 
 [node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_bl0du")]
 
-[node name="InvisibleWall" type="StaticBody2D" parent="." unique_id=245561959]
-collision_layer = 128
-collision_mask = 17
+[node name="Rabbit" parent="." unique_id=1459154896 instance=ExtResource("8_2mgoq")]
+position = Vector2(38, 15)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall" unique_id=177101715]
-position = Vector2(-1.5, 19)
-shape = SubResource("RectangleShape2D_huasi")
+[node name="Umbrella" parent="." unique_id=1028450522 instance=ExtResource("8_uhnj4")]
+position = Vector2(54, 16)
 
-[node name="TopWall" type="StaticBody2D" parent="." unique_id=1942590522]
-collision_layer = 128
-collision_mask = 17
+[node name="Umbrella2" parent="." unique_id=1739771723 instance=ExtResource("8_uhnj4")]
+position = Vector2(11, 24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=19034964]
-position = Vector2(125.5, -3.5)
-shape = SubResource("RectangleShape2D_76v2p")
+[node name="Walls" type="Node" parent="." unique_id=425504250]
 
-[node name="SideWall" type="StaticBody2D" parent="." unique_id=1648605199]
+[node name="InvisibleWall6" type="StaticBody2D" parent="Walls" unique_id=1785913812]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall6" unique_id=1755102138]
+position = Vector2(-17, 21)
+shape = SubResource("RectangleShape2D_drdnd")
+
+[node name="InvisibleWall8" type="StaticBody2D" parent="Walls" unique_id=978101143]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall8" unique_id=922479612]
+position = Vector2(21, 14)
+shape = SubResource("RectangleShape2D_drdnd")
+
+[node name="InvisibleWall3" type="StaticBody2D" parent="Walls" unique_id=640443925]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall3" unique_id=976418116]
+position = Vector2(-59, 21)
+shape = SubResource("RectangleShape2D_mai8y")
+
+[node name="InvisibleWall5" type="StaticBody2D" parent="Walls" unique_id=701323145]
+position = Vector2(82, -16)
+collision_layer = 256
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall5" unique_id=562944786]
+position = Vector2(71, 30)
+shape = SubResource("RectangleShape2D_ioaeq")
+
+[node name="SideWall" type="StaticBody2D" parent="Walls" unique_id=1648605199]
 position = Vector2(253, 0)
 collision_layer = 128
 collision_mask = 17
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideWall" unique_id=814508133]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/SideWall" unique_id=814508133]
 position = Vector2(-1.5, 19)
 shape = SubResource("RectangleShape2D_m1efj")
 
-[node name="InvisibleWall3" type="StaticBody2D" parent="." unique_id=640443925]
-position = Vector2(82, -16)
-collision_layer = 256
-collision_mask = 16
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1942590522]
+collision_layer = 128
+collision_mask = 17
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall3" unique_id=976418116]
-position = Vector2(-41, 29)
-shape = SubResource("RectangleShape2D_mai8y")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=19034964]
+position = Vector2(125.5, -3.5)
+shape = SubResource("RectangleShape2D_76v2p")
 
-[node name="InvisibleWall5" type="StaticBody2D" parent="." unique_id=701323145]
-position = Vector2(82, -16)
-collision_layer = 256
-collision_mask = 16
+[node name="InvisibleWall" type="StaticBody2D" parent="Walls" unique_id=245561959]
+collision_layer = 128
+collision_mask = 17
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall5" unique_id=562944786]
-position = Vector2(71, 30)
-shape = SubResource("RectangleShape2D_ioaeq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall" unique_id=177101715]
+position = Vector2(-1.5, 19)
+shape = SubResource("RectangleShape2D_huasi")
 
-[node name="InvisibleWall6" type="StaticBody2D" parent="." unique_id=1785913812]
-position = Vector2(82, -16)
-collision_layer = 256
-collision_mask = 16
+[node name="Umbrella3" parent="." unique_id=871247590 instance=ExtResource("8_uhnj4")]
+position = Vector2(95, 24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall6" unique_id=1755102138]
-position = Vector2(29, 30)
-shape = SubResource("RectangleShape2D_drdnd")
+[node name="Rabbit2" parent="." unique_id=613159365 instance=ExtResource("8_2mgoq")]
+position = Vector2(125, 7)
 
-[node name="InvisibleWall7" type="StaticBody2D" parent="." unique_id=1460766305]
-position = Vector2(82, -16)
-collision_layer = 256
-collision_mask = 16
+[node name="Umbrella4" parent="." unique_id=1257111245 instance=ExtResource("8_uhnj4")]
+position = Vector2(143, 8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall7" unique_id=692540979]
-position = Vector2(134, 21)
-shape = SubResource("RectangleShape2D_7ewk0")
-
-[node name="Rabbit" parent="." unique_id=1459154896 instance=ExtResource("8_2mgoq")]
-position = Vector2(10, 23)
-
-[node name="Umbrella" parent="." unique_id=1028450522 instance=ExtResource("8_uhnj4")]
-position = Vector2(32, 24)
+[node name="Rabbit3" parent="." unique_id=1994593648 instance=ExtResource("8_2mgoq")]
+position = Vector2(218, 39)
