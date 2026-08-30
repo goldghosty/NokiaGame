@@ -10,11 +10,14 @@ var ladders = 0
 var umbrellas_opened = 0
 var salt_spilled = 0
 var enemies_killed = 0
-# Called when the node enters the scene tree for the first time.
+var player_dead : bool = false
+var tutorial_done: bool = false
+
 func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if player_health <= 0:
+		player_dead = true
+	

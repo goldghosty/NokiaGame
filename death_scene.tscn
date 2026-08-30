@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://doh7fb7gmsywa"]
+
+[ext_resource type="Script" uid="uid://dqdy32hwevjhs" path="res://death_scene.gd" id="1_bea04"]
+
+[node name="DeathScene" type="Node2D" unique_id=1526622932]
+script = ExtResource("1_bea04")
+
+[node name="Label" type="Label" parent="." unique_id=1149521933]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "YOU DIED"
+
+[node name="Restart" type="Button" parent="." unique_id=275774798]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "CLICK TO RESTART
+"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
