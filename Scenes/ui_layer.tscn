@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="1_pxq32"]
 [ext_resource type="Script" uid="uid://bpsw3cuhadvtu" path="res://Scripts/ui_layer.gd" id="1_r7lrm"]
-[ext_resource type="Texture2D" uid="uid://bgd74tql4fow7" path="res://Sprites/health_nokia.png" id="3_sqpng"]
+[ext_resource type="Texture2D" uid="uid://cy2v5f3xualu2" path="res://Sprites/health_new.png" id="3_sqpng"]
 
 [node name="UILayer" type="CanvasLayer" unique_id=854107549]
 script = ExtResource("1_r7lrm")

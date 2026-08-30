@@ -6,9 +6,9 @@ var level_completed = false
 @export var next_scene : PackedScene
 
 var tutorial_dialogue :Array[String] = [
-	"Okay, let me give you a quick rundown",
-	"Move left and right with arrow keys",
-	"Use X to interact with items",
+	"Okay, let me give you a quick rundown.",
+	"Move left and right with arrow keys.",
+	"Use X to interact with items.",
 	"Use Z to shoot a big hairball.",
 	"Hairballs do need to charge up though.",
 	"I'll tell you when I'm ready again.",

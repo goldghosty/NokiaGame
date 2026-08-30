@@ -1,15 +1,30 @@
 [gd_scene format=3 uid="uid://55trt7y3wtum"]
 
-[ext_resource type="Texture2D" uid="uid://biootrdaoweg2" path="res://Sprites/ladder.png" id="1_cq4ai"]
+[ext_resource type="Texture2D" uid="uid://bje62hc2k3gap" path="res://Sprites/ladder_newer.png" id="1_75hc7"]
+[ext_resource type="Script" uid="uid://da6uf36u36yy0" path="res://Scenes/ladder.gd" id="1_fnw1j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqhsa"]
-size = Vector2(8, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75hc7"]
+size = Vector2(9, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnw1j"]
+size = Vector2(6, 2)
 
 [node name="Ladder" type="Area2D" unique_id=379251244]
+collision_layer = 1024
+script = ExtResource("1_fnw1j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439681977]
-texture = ExtResource("1_cq4ai")
+texture = ExtResource("1_75hc7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315643293]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_lqhsa")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=503080981]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_75hc7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1572375264]
+collision_layer = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1123779522]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_fnw1j")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

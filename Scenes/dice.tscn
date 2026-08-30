@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://ddrpflawrhmtc"]
+
+[ext_resource type="Script" uid="uid://cn7tfjalpugwm" path="res://Scripts/clover.gd" id="1_1kcbr"]
+[ext_resource type="Texture2D" uid="uid://dlemrjklgd0df" path="res://Sprites/clover_death.png" id="2_b27ex"]
+[ext_resource type="Texture2D" uid="uid://d01q24cij7e7v" path="res://Sprites/jumpdice.png" id="3_1kcbr"]
+[ext_resource type="AudioStream" uid="uid://d031qgoolupgd" path="res://Sounds/enemykill.mp3" id="4_jwc25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxew5"]
+atlas = ExtResource("2_b27ex")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uvty"]
+atlas = ExtResource("2_b27ex")
+region = Rect2(0, 10, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b27ex"]
+atlas = ExtResource("3_1kcbr")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wmyd"]
+atlas = ExtResource("3_1kcbr")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwc25"]
+atlas = ExtResource("3_1kcbr")
+region = Rect2(0, 10, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0ujp"]
+atlas = ExtResource("3_1kcbr")
+region = Rect2(10, 10, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wa6is"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxew5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uvty")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b27ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wmyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwc25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0ujp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8urk"]
+size = Vector2(8, 8)
+
+[node name="Dice" type="Area2D" unique_id=1459154896 groups=["Enemy"]]
+collision_layer = 16
+collision_mask = 393
+script = ExtResource("1_1kcbr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1506494184]
+sprite_frames = SubResource("SpriteFrames_wa6is")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1524258988]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_c8urk")
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1383128668]
+target_position = Vector2(-7, 0)
+collision_mask = 384
+collide_with_areas = true
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=853632391]
+target_position = Vector2(8, 0)
+collision_mask = 384
+collide_with_areas = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1686474279]
+position = Vector2(0, -5)
+rect = Rect2(-5, -1, 10, 11)
+
+[node name="EnemyKilled" type="AudioStreamPlayer2D" parent="." unique_id=407077437]
+stream = ExtResource("4_jwc25")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

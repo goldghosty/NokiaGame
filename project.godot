@@ -75,6 +75,8 @@ advance_dialogue={
 2d_physics/layer_7="Salt"
 2d_physics/layer_8="Walls"
 2d_physics/layer_9="EnemyOnlyWall"
+2d_physics/layer_10="LadderTop"
+2d_physics/layer_11="LadderBody"
 
 [physics]
 
