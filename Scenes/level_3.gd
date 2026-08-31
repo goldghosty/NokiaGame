@@ -31,7 +31,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.enemies_killed == 4:
+	if Global.enemies_killed == 15:
 		Global.level_three_complete = true
 
 	if mirror_3.ready_to_change == true:

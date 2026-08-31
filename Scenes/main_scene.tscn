@@ -81,20 +81,6 @@ position = Vector2(9, 40)
 
 [node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_maf8m")]
 
-[node name="Enemies" type="Node" parent="." unique_id=2027588824]
-
-[node name="Clover" parent="Enemies" unique_id=1459154896 instance=ExtResource("8_m1efj")]
-position = Vector2(128, 23)
-
-[node name="Clover2" parent="Enemies" unique_id=849456715 instance=ExtResource("8_m1efj")]
-position = Vector2(235, 15)
-
-[node name="Clover3" parent="Enemies" unique_id=498935071 instance=ExtResource("8_m1efj")]
-position = Vector2(228, 39)
-
-[node name="Clover4" parent="Enemies" unique_id=220708536 instance=ExtResource("8_m1efj")]
-position = Vector2(9, 23)
-
 [node name="Objects" type="Node" parent="." unique_id=1196856261]
 
 [node name="Salt2" parent="Objects" unique_id=1382819905 instance=ExtResource("8_huasi")]
@@ -118,6 +104,20 @@ position = Vector2(21, 25)
 [node name="Mirror" parent="Objects" unique_id=1934176071 groups=["Projectile"] instance=ExtResource("2_huasi")]
 position = Vector2(239, 36)
 next_scene = ExtResource("4_mai8y")
+
+[node name="Enemies" type="Node" parent="." unique_id=2027588824]
+
+[node name="Clover" parent="Enemies" unique_id=1459154896 instance=ExtResource("8_m1efj")]
+position = Vector2(128, 23)
+
+[node name="Clover2" parent="Enemies" unique_id=849456715 instance=ExtResource("8_m1efj")]
+position = Vector2(235, 15)
+
+[node name="Clover3" parent="Enemies" unique_id=498935071 instance=ExtResource("8_m1efj")]
+position = Vector2(228, 39)
+
+[node name="Clover4" parent="Enemies" unique_id=220708536 instance=ExtResource("8_m1efj")]
+position = Vector2(9, 23)
 
 [node name="Walls" type="Node" parent="." unique_id=85335898]
 

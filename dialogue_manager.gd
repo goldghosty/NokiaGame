@@ -3,6 +3,7 @@ extends CanvasLayer
 signal dialogue_complete
 
 @export var lucky_cat_rect : Texture2D
+@export var black_cat_rect : Texture2D
 @onready var texture_rect: TextureRect = $DialogueBox/TextureRect/TextureRect
 
 @onready var dialogue_box: Control = $DialogueBox
@@ -62,3 +63,6 @@ func show_line():
 
 func change_speaker():
 	texture_rect.texture = lucky_cat_rect
+
+func original_speaker():
+	texture_rect.texture = black_cat_rect

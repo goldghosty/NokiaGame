@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d1r5r8y1sxsh7" path="res://home_screen.gd" id="1_outur"]
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="2_fm0op"]
 [ext_resource type="Texture2D" uid="uid://b3xq0korwgwdd" path="res://Sprites/homescreencat.png" id="3_xe7vm"]
+[ext_resource type="AudioStream" uid="uid://l0cdeksy0hmq" path="res://Sounds/cattheme.wav" id="4_fm0op"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gf7oa"]
 
@@ -69,5 +70,8 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ckqhc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2352u")
 text = "ENTER TO START"
 autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=346021431]
+stream = ExtResource("4_fm0op")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

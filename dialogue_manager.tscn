@@ -13,6 +13,7 @@ process_mode = 3
 layer = 100
 script = ExtResource("1_k6lpl")
 lucky_cat_rect = ExtResource("2_tffx4")
+black_cat_rect = ExtResource("4_aal2s")
 cat_voice_one = ExtResource("5_bfllj")
 cat_voice_two = ExtResource("3_tqlrv")
 
