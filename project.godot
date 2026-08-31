@@ -14,6 +14,8 @@ config/name="Nokia"
 run/main_scene="uid://djiy046kftb15"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=15
+boot_splash/bg_color=Color(0.2627451, 0.32156864, 0.23921569, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]

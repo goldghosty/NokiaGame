@@ -34,5 +34,5 @@ func on_screen_exited():
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and Global.level_three_complete:
+	if body.is_in_group("Player") and Global.level_three_complete and mirror_broken == true:
 		ready_to_change = true
