@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djiy046kftb15"]
 
-[ext_resource type="Script" uid="uid://d1r5r8y1sxsh7" path="res://home_screen.gd" id="1_outur"]
+[ext_resource type="Script" uid="uid://d1r5r8y1sxsh7" path="res://Scripts/home_screen.gd" id="1_outur"]
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="2_fm0op"]
 [ext_resource type="Texture2D" uid="uid://b3xq0korwgwdd" path="res://Sprites/homescreencat.png" id="3_xe7vm"]
 [ext_resource type="AudioStream" uid="uid://l0cdeksy0hmq" path="res://Sounds/cattheme.wav" id="4_fm0op"]

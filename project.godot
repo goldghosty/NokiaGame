@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Nokia"
+run/main_scene="uid://djiy046kftb15"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=15
 config/icon="res://icon.svg"

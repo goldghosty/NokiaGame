@@ -26,6 +26,7 @@ func _on_button_pressed() -> void:
 	Global.enemies_killed = 0
 	Global.player_dead = false
 	Global.neko_is_dead = false
+	Global.tutorial_done = false
 	Global.lucky_cat_health = 5
 	DialogueManager.original_speaker()
 	get_tree().change_scene_to_file("res://home_screen.tscn")

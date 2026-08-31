@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c5ykbif8h8bh7"]
 
 [ext_resource type="Texture2D" uid="uid://d02hglp5x3es0" path="res://Sprites/finale.png" id="1_3wcc1"]
-[ext_resource type="Script" uid="uid://cqkgyrqdgxrh2" path="res://end_scene.gd" id="1_vitp6"]
+[ext_resource type="Script" uid="uid://cqkgyrqdgxrh2" path="res://Scripts/end_scene.gd" id="1_vitp6"]
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="3_taqub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvrxn"]

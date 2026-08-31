@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://55trt7y3wtum"]
 
 [ext_resource type="Texture2D" uid="uid://bje62hc2k3gap" path="res://Sprites/ladder_newer.png" id="1_75hc7"]
-[ext_resource type="Script" uid="uid://da6uf36u36yy0" path="res://Scenes/ladder.gd" id="1_fnw1j"]
+[ext_resource type="Script" uid="uid://da6uf36u36yy0" path="res://Scripts/ladder.gd" id="1_fnw1j"]
 [ext_resource type="AudioStream" uid="uid://5tv8jjp1ylom" path="res://Sounds/good_sound.wav" id="3_fc354"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75hc7"]
