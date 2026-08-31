@@ -1,19 +1,116 @@
 [gd_scene format=3 uid="uid://doh7fb7gmsywa"]
 
 [ext_resource type="Script" uid="uid://dqdy32hwevjhs" path="res://death_scene.gd" id="1_bea04"]
+[ext_resource type="Texture2D" uid="uid://b8gqv731hk4d7" path="res://Sprites/dialoguebox.png" id="2_oukyh"]
+[ext_resource type="Texture2D" uid="uid://c2m150bqlxkr8" path="res://Sprites/blackcathead.png" id="3_xya4v"]
+[ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="4_2iwu5"]
+[ext_resource type="AudioStream" uid="uid://diqhv3xjopmip" path="res://Sounds/playerdeath.wav" id="5_xya4v"]
 
-[node name="DeathScene" type="Node2D" unique_id=1526622932]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiupi"]
+bg_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfh5a"]
+bg_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbuf"]
+bg_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn8o2"]
+bg_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gtjr"]
+bg_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+
+[node name="DeathScene" type="CanvasLayer" unique_id=1656086693]
 script = ExtResource("1_bea04")
 
-[node name="Label" type="Label" parent="." unique_id=1149521933]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2093996393]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=956524839]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 3.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 31.0
+grow_horizontal = 2
+texture = ExtResource("2_oukyh")
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/TextureRect" unique_id=1918708913]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 18.0
+offset_bottom = 24.0
+texture = ExtResource("3_xya4v")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect" unique_id=188054194]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -13.0
+offset_right = 4.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_2iwu5")
+theme_override_font_sizes/font_size = 16
 text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="Restart" type="Button" parent="." unique_id=275774798]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "CLICK TO RESTART
-"
+[node name="Restart" type="Button" parent="ColorRect" unique_id=275774798]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.5
+offset_top = -14.0
+offset_right = 38.5
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+theme_override_colors/font_focus_color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+theme_override_colors/font_pressed_color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+theme_override_colors/font_hover_color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+theme_override_colors/font_disabled_color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+theme_override_colors/font_outline_color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+theme_override_colors/icon_normal_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_focus_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_hover_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_disabled_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("4_2iwu5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_xiupi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wfh5a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fbuf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kn8o2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3gtjr")
+text = "ENTER TO RESTART"
+autowrap_mode = 3
 
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1708390704]
+stream = ExtResource("5_xya4v")
+
+[connection signal="pressed" from="ColorRect/Restart" to="." method="_on_restart_pressed"]

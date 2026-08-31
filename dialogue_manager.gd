@@ -2,6 +2,9 @@ extends CanvasLayer
 
 signal dialogue_complete
 
+@export var lucky_cat_rect : Texture2D
+@onready var texture_rect: TextureRect = $DialogueBox/TextureRect/TextureRect
+
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: Label = $DialogueBox/TextureRect/DialogueText
 @onready var cat_talk: AudioStreamPlayer2D = $CatTalk
@@ -56,3 +59,6 @@ func show_line():
 	use_first_voice = !use_first_voice
 	var tween = create_tween()
 	tween.tween_property(dialogue_text, "visible_ratio", 1.0, duration)
+
+func change_speaker():
+	texture_rect.texture = lucky_cat_rect

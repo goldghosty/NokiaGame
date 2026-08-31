@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://c5ykbif8h8bh7"]
+
+[ext_resource type="Texture2D" uid="uid://d02hglp5x3es0" path="res://Sprites/finale.png" id="1_3wcc1"]
+[ext_resource type="Script" uid="uid://cqkgyrqdgxrh2" path="res://end_scene.gd" id="1_vitp6"]
+[ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="3_taqub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvrxn"]
+atlas = ExtResource("1_3wcc1")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vitp6"]
+atlas = ExtResource("1_3wcc1")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taqub"]
+atlas = ExtResource("1_3wcc1")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu0sp"]
+atlas = ExtResource("1_3wcc1")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljta4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvrxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vitp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taqub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu0sp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vitp6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_taqub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tu0sp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5sx7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ti018"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ljta4"]
+
+[node name="EndScene" type="CanvasLayer" unique_id=1297120495]
+script = ExtResource("1_vitp6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=492350978]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1152788897]
+position = Vector2(42, 24)
+sprite_frames = SubResource("SpriteFrames_ljta4")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="." unique_id=142868998]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 12.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("3_taqub")
+theme_override_font_sizes/font_size = 8
+text = "YOU WIN!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=339141274]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -14.0
+offset_right = 30.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_focus_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_disabled_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_outline_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_normal_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_focus_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_hover_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_disabled_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("3_taqub")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vitp6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_taqub")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tu0sp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p5sx7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ti018")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ljta4")
+text = "ENTER TO RESET"

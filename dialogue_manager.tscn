@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxw5k0quo1cxa" path="res://dialogue_manager.gd" id="1_k6lpl"]
 [ext_resource type="Texture2D" uid="uid://b8gqv731hk4d7" path="res://Sprites/dialoguebox.png" id="2_jslty"]
+[ext_resource type="Texture2D" uid="uid://coyiss8dfmjmk" path="res://Sprites/lucky_head.png" id="2_tffx4"]
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="3_aal2s"]
 [ext_resource type="AudioStream" uid="uid://b05o16jst7bgq" path="res://Sounds/cattalk2.wav" id="3_tqlrv"]
 [ext_resource type="Texture2D" uid="uid://c2m150bqlxkr8" path="res://Sprites/blackcathead.png" id="4_aal2s"]
@@ -11,6 +12,7 @@
 process_mode = 3
 layer = 100
 script = ExtResource("1_k6lpl")
+lucky_cat_rect = ExtResource("2_tffx4")
 cat_voice_one = ExtResource("5_bfllj")
 cat_voice_two = ExtResource("3_tqlrv")
 

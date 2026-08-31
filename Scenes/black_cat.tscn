@@ -111,7 +111,7 @@ size = Vector2(3, 2)
 size = Vector2(7, 6)
 
 [node name="BlackCat" type="CharacterBody2D" unique_id=1722602674 groups=["Player"]]
-collision_mask = 1734
+collision_mask = 1766
 script = ExtResource("1_ij6vw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1347056672]
@@ -140,7 +140,7 @@ position = Vector2(1, 0)
 stream = ExtResource("5_3rw4y")
 
 [node name="HitArea" type="Area2D" parent="." unique_id=1228453219]
-collision_mask = 20
+collision_mask = 52
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=663614802]
 position = Vector2(-0.5, 0)

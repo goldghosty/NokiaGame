@@ -1,7 +1,7 @@
 extends Node2D
 
 var level_completed = false
-@export var next_scene :PackedScene
+
 @onready var mirror_2: Area2D = $Mirror2
 
 
@@ -34,4 +34,7 @@ func _process(delta: float) -> void:
 			DialogueManager.start_dialogue(level_two_dialogue)
 		else:
 			DialogueManager.start_dialogue(level_two_best_dialogue)
-		get_tree().change_scene_to_file(next_scene.resource_path)
+		get_tree().change_scene_to_file("res://Scenes/level_3.tscn")
+
+	if Global.player_dead == true:
+		get_tree().change_scene_to_file("res://death_scene.tscn")

@@ -38,9 +38,7 @@ var tutorial_dialogue :Array[String] = [
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.tutorial_done == false:
-		DialogueManager.start_dialogue(tutorial_dialogue)
-		DialogueManager.dialogue_complete.connect(on_tutorial_dialogue_complete)
+	DialogueManager.start_dialogue(tutorial_dialogue)
 	Global.can_shoot = true
 
 
@@ -59,5 +57,3 @@ func _process(delta: float) -> void:
 	if Global.player_dead == true:
 		get_tree().change_scene_to_file("res://death_scene.tscn")
 		
-func on_tutorial_dialogue_complete():
-	Global.tutorial_done = true

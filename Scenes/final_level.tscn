@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bf28ltyd87riu"]
 
+[ext_resource type="Script" uid="uid://bugilxxid4pnw" path="res://Scenes/final_level.gd" id="1_ake6q"]
 [ext_resource type="Script" uid="uid://n2sff2gdoi0f" path="res://Scripts/camera_2d.gd" id="3_x8f2t"]
 [ext_resource type="PackedScene" uid="uid://bp3ba2pi2mr6f" path="res://Scenes/ui_layer.tscn" id="4_4vpy6"]
 [ext_resource type="Texture2D" uid="uid://b5uk236m8uucb" path="res://Sprites/platformtile.png" id="7_20vd3"]
@@ -42,6 +43,7 @@ size = Vector2(86, 3)
 size = Vector2(3, 58)
 
 [node name="FinalLevel" type="Node2D" unique_id=2078736581]
+script = ExtResource("1_ake6q")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1012595050 node_paths=PackedStringArray("player")]
 position = Vector2(42, 24)
@@ -106,3 +108,13 @@ collision_mask = 17
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/InvisibleWall" unique_id=177101715]
 position = Vector2(-1.5, 19)
 shape = SubResource("RectangleShape2D_huasi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=590881372]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=932921171]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.78039217, 0.9411765, 0.84705883, 1)

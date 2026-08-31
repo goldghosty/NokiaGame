@@ -1,4 +1,7 @@
 extends CharacterBody2D
+
+signal neko_dead
+
 @onready var attack_timer: Timer = $AttackTimer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -13,8 +16,8 @@ var y_direction : int = 1
 var shoot_direction = -1
 var start_y : float
 var player : Node2D
-var lucky_cat_health = 5
-var is_dead: bool = false
+
+
 
 func _ready() -> void:
 	start_y = global_position.y
@@ -22,7 +25,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if is_dead:
+	if Global.neko_is_dead:
 		if not is_on_floor():
 			velocity.y += gravity * delta
 		else:
@@ -63,19 +66,22 @@ func enemy_shoot() -> void:
 
 	
 func take_damage():
-	if is_dead:
+	if Global.neko_is_dead:
 		return
 	
 	audio_stream_player_2d.play()
-	lucky_cat_health -= 1
+	Global.lucky_cat_health -= 1
 	
-	if lucky_cat_health <= 0:
-		is_dead = true
+	if Global.lucky_cat_health <= 0:
 		attack_timer.stop()
 		defeated_sound.play()
+		await defeated_sound.finished
 		animated_sprite_2d.play("death")
+		Global.neko_is_dead = true
+		await get_tree().create_timer(0.5).timeout
+		neko_dead.emit()
 	
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Projectile") and lucky_cat_health > 0:
+	if area.is_in_group("Projectile") and Global.lucky_cat_health > 0:
 		take_damage()
 		

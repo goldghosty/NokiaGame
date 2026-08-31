@@ -59,7 +59,6 @@ size = Vector2(88, 4)
 
 [node name="LevelOne" type="Node2D" unique_id=2078736581]
 script = ExtResource("1_m1efj")
-next_scene = ExtResource("4_mai8y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1012595050 node_paths=PackedStringArray("player")]
 position = Vector2(42, 24)

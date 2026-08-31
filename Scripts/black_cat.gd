@@ -65,3 +65,7 @@ func _on_hit_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
 		injured_sound.play()
 		Global.player_health -= 1
+	if area.is_in_group("Coin"):
+		print("entered")
+		injured_sound.play()
+		Global.player_health -= 1

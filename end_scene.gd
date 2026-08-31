@@ -1,12 +1,10 @@
 extends CanvasLayer
+@onready var button: Button = $Button
 
-@onready var restart: Button = $ColorRect/Restart
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	restart.grab_focus()
-	audio_stream_player_2d.play()
+	button.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +13,9 @@ func _process(delta: float) -> void:
 
 
 
-func _on_restart_pressed() -> void:
+
+func _on_button_pressed() -> void:
+	Global.can_shoot = true
 	Global.player_health = 3
 	Global.level_one_complete = false
 	Global.level_two_complete = false
@@ -27,4 +27,4 @@ func _on_restart_pressed() -> void:
 	Global.player_dead = false
 	Global.neko_is_dead = false
 	Global.lucky_cat_health = 5
-	get_tree().change_scene_to_file("res://Scenes/main_scene.tscn")
+	get_tree().change_scene_to_file("res://home_screen.tscn")

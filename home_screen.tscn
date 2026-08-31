@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://djiy046kftb15"]
+
+[ext_resource type="Script" uid="uid://d1r5r8y1sxsh7" path="res://home_screen.gd" id="1_outur"]
+[ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="2_fm0op"]
+[ext_resource type="Texture2D" uid="uid://b3xq0korwgwdd" path="res://Sprites/homescreencat.png" id="3_xe7vm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gf7oa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vivg1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6h2m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckqhc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2352u"]
+
+[node name="HomeScreen" type="CanvasLayer" unique_id=714804949]
+script = ExtResource("1_outur")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1355053108]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.78039217, 0.9411765, 0.84705883, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=665410357]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("2_fm0op")
+text = "TOUGH LUCK"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=276404778]
+position = Vector2(22, 31)
+texture = ExtResource("3_xe7vm")
+
+[node name="Button" type="Button" parent="." unique_id=580278470]
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 83.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_focus_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_hover_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_disabled_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/font_outline_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_normal_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_focus_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_hover_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_colors/icon_disabled_color = Color(0.2627451, 0.32156864, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("2_fm0op")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gf7oa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vivg1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o6h2m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ckqhc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2352u")
+text = "ENTER TO START"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
