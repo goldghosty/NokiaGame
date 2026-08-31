@@ -1,10 +1,12 @@
 extends CanvasLayer
 @onready var button: Button = $Button
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button.grab_focus()
+	audio_stream_player_2d.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

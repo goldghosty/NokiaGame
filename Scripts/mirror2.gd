@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Projectile") and !mirror_broken and is_on_screen and Global.level_two_complete:
 		animated_sprite_2d.play("breaking")
+		await animated_sprite_2d.animation_finished
 		mirror_break.play()
 		mirror_broken = true
 

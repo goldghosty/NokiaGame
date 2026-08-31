@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d02hglp5x3es0" path="res://Sprites/finale.png" id="1_3wcc1"]
 [ext_resource type="Script" uid="uid://cqkgyrqdgxrh2" path="res://Scripts/end_scene.gd" id="1_vitp6"]
 [ext_resource type="FontFile" uid="uid://cjywvmwru1yhg" path="res://Zepto-Regular.ttf" id="3_taqub"]
+[ext_resource type="AudioStream" uid="uid://l0cdeksy0hmq" path="res://Sounds/cattheme.wav" id="4_taqub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvrxn"]
 atlas = ExtResource("1_3wcc1")
@@ -116,5 +117,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_p5sx7")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ti018")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ljta4")
 text = "ENTER TO RESET"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1945816990]
+stream = ExtResource("4_taqub")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

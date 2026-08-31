@@ -77,6 +77,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAABAAEAAQABAAAAAAACAAEAAQACAAA
 tile_set = SubResource("TileSet_ioaeq")
 
 [node name="BlackCat" parent="." unique_id=1722602674 instance=ExtResource("6_drdnd")]
+z_index = 1
 position = Vector2(9, 40)
 
 [node name="UILayer" parent="." unique_id=854107549 instance=ExtResource("7_maf8m")]
